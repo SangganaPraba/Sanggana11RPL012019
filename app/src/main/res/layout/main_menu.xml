@@ -27,7 +27,7 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:background="@mipmap/eskrim"
+                    android:background="@mipmap/cov1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
@@ -66,7 +66,7 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:background="@mipmap/esbuah"
+                    android:background="@mipmap/cov2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
