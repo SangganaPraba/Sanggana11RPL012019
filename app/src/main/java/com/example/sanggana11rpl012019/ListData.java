@@ -1,8 +1,10 @@
 package com.example.sanggana11rpl012019;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -30,7 +32,7 @@ public class ListData extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_data);
         recyclerView = (RecyclerView) findViewById(R.id.rvdata);
-        addData();
+        //addData();
         addDataOnline();
     }
 
@@ -70,7 +72,15 @@ public class ListData extends AppCompatActivity {
                             adapter = new DataAdapter(DataArrayList, new DataAdapter.Callback() {
                                 @Override
                                 public void onClick(int position) {
-
+                                    Model movie = DataArrayList.get(position);
+                                    Intent intent = new Intent(getApplicationContext(), DetailMovie.class);
+                                    intent.putExtra("id",movie.id);
+                                    intent.putExtra("judul",movie.original_title);
+                                    intent.putExtra("date",movie.release_date);
+                                    intent.putExtra("deskripsi",movie.overview);
+                                    intent.putExtra("path",movie.poster_path);
+                                    startActivity(intent);
+                                    Toast.makeText(ListData.this, ""+position, Toast.LENGTH_SHORT).show();
                                 }
 
                                 @Override
@@ -123,7 +133,7 @@ public class ListData extends AppCompatActivity {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ListData.this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
+    }
+}
 
-    }
-    }
 
