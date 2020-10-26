@@ -1,5 +1,6 @@
 package com.example.sanggana11rpl012019;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 
@@ -34,7 +35,14 @@ public class ListDataFavourite extends AppCompatActivity {
         adapter = new DataAdapterFavourite(DataArrayList, new DataAdapterFavourite.Callback() {
             @Override
             public void onClick(int position) {
+                //intent ke detail movie
+                Intent move = new Intent(getApplicationContext(), DetailFavourite.class);
+                move.putExtra("judul",DataArrayList.get(position).getJudul());
+                move.putExtra("path",DataArrayList.get(position).getPath());
+                move.putExtra("date",DataArrayList.get(position).getReleaseDate());
+                move.putExtra("deskripsi",DataArrayList.get(position).getDesc());
 
+                startActivity(move);
             }
 
             @Override
