@@ -6,26 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".SplashScreen"
     android:orientation="vertical"
-    android:background="@mipmap/wallpaper">
+    android:background="@mipmap/pict">
 
-    <TextView
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="60dp"
-        android:text="Selamat"
-        android:textColor="#000000"
-        android:textSize="40dp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginLeft="60dp"
-        android:text="Datang"
-        android:textColor="#000000"
-        android:textSize="40dp"
-        android:textStyle="bold" />
 </LinearLayout>

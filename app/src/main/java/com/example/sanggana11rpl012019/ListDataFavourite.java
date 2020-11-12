@@ -25,6 +25,8 @@ public class ListDataFavourite extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_data);
+        getSupportActionBar().hide();
+
         recyclerView = (RecyclerView) findViewById(R.id.rvdata);
         DataArrayList = new ArrayList<>();
         // Setup Realm
@@ -41,7 +43,7 @@ public class ListDataFavourite extends AppCompatActivity {
                 move.putExtra("path",DataArrayList.get(position).getPath());
                 move.putExtra("date",DataArrayList.get(position).getReleaseDate());
                 move.putExtra("deskripsi",DataArrayList.get(position).getDesc());
-
+                // di putextra yang lain
                 startActivity(move);
             }
 
